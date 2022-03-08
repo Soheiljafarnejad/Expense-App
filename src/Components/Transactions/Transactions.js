@@ -1,8 +1,14 @@
-const Transactions = () => {
+const Transactions = ({ transActions }) => {
   return (
     <section>
       <h2>Transactions:</h2>
-      <input type="text" />
+      {transActions.map((item) => {
+        return (
+          <div>
+            <p>{item.description}</p>
+          </div>
+        );
+      })}
     </section>
   );
 };
