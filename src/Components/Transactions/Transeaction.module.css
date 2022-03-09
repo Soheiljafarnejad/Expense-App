@@ -1,0 +1,14 @@
+.TransActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.TransActions button {
+  color: white;
+  background-color: var(--color-dark);
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}

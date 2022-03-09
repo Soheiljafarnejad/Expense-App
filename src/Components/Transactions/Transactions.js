@@ -1,7 +1,24 @@
-const Transactions = ({ transActions }) => {
+import { useState } from "react";
+import TransActionForm from "../TransActionForm/TransActionForm";
+import Modal from "../../common/Modal/Modal";
+import style from "./Transeaction.module.css";
+const Transactions = ({ transActions, addTransAction }) => {
+  const [isShow, setIsShow] = useState(false);
+
   return (
     <section>
-      <h2>Transactions:</h2>
+      <div className={style.TransActions}>
+        <h2>Transactions:</h2>
+        <button onClick={() => setIsShow(!isShow)}>add</button>
+        {isShow && (
+          <Modal>
+            <TransActionForm
+              addTransAction={addTransAction}
+              setIsShow={setIsShow}
+            />
+          </Modal>
+        )}
+      </div>
       {transActions.map((item) => {
         return (
           <div>

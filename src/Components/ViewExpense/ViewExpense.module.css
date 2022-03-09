@@ -1,13 +1,141 @@
-.topSection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem 0;
+/* header */
+.container {
+  background-color: var(--color-dark);
+  color: white;
+  border-radius: 20px;
+  padding: 2rem 4rem;
 }
 
-.bottomSection {
+.headerCart {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 1rem 0;
+  justify-content: space-between;
+}
+
+.cartBtn {
+  display: flex;
+}
+
+.cartBtn button {
+  color: var(--color-dark);
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.settings {
+  padding: 1rem !important;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cart body */
+
+.bodyCart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.cart {
+  margin-right: 1rem;
+}
+
+.description {
+  margin: auto;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: space-between;
+}
+.amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.amount h3 {
+  font-size: 2.3rem;
+}
+
+.value span {
+  color: var(--gray);
+  font-size: 1.7rem;
+}
+
+.cartIcons {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.cartIcons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  color: var(--gray);
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+}
+.cartIcons button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+/* box */
+.box__Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  flex-grow: 1;
+}
+
+.box button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  border: none;
+  outline: none;
+  cursor: default;
+}
+
+.income{
+  margin-right: 2rem;
+}
+
+.income button {
+  color: var(--green);
+  background-color: rgba(66, 232, 116, 0.2);
+}
+.income h2 {
+  color: var(--green);
+}
+
+.expense button {
+  color: var(--orange);
+  background-color: rgba(255, 156, 11, 0.2);
+}
+.expense h2 {
+  color: var(--orange);
 }

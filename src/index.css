@@ -11,7 +11,9 @@
 :root {
   --body-color: #f6f6f6;
   --color-dark: #080807;
-  --color: #bcccd2;
+  --gray: #e2e8f0;
+  --green: #42e874;
+  --orange: #ff9c0b;
   --color: #443d3a;
   --color: #c3bdff;
   --color: #8c7875;
@@ -23,7 +25,7 @@ html {
 
 body {
   font-family: "Noto Sans", sans-serif;
-  background-color: #f6f6f6;
+  background-color: var(--body-color);
   font-size: 1.8rem;
   font-weight: 500;
 }
@@ -33,6 +35,7 @@ input {
   font-family: "Noto Sans", sans-serif;
   font-size: 1.6rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
 h1 {
@@ -54,16 +57,16 @@ h3 {
   body,
   button,
   input {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   h2 {
     font-size: 2.5rem;
   }
 
   h3 {
-    font-size: 2.8rem;
+    font-size: 3.5rem;
   }
 }

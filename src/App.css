@@ -1,5 +1,5 @@
 .app {
-  background-color: #fff;
+  background-color: var(--body-color);
   width: 100%;
   height: 100vh;
   padding: 2rem;
@@ -7,17 +7,17 @@
   align-items: center;
   justify-content: space-between;
 }
-nav {
+.nav {
   height: 100%;
   width: auto;
   border: 1px solid black;
 }
-main {
+.main {
   height: 100%;
-  width: 70%;
+  width: 60%;
   border: 1px solid black;
 }
-aside {
+.aside {
   height: 100%;
   width: 20%;
   border: 1px solid black;

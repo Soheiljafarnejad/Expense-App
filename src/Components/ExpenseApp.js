@@ -25,12 +25,11 @@ const ExpenseApp = () => {
 
   return (
     <>
-      <ViewExpense
-        income={income}
-        expense={expense}
+      <ViewExpense income={income} expense={expense} />
+      <Transactions
+        transActions={transActions}
         addTransAction={addTransAction}
       />
-      <Transactions transActions={transActions} />
     </>
   );
 };

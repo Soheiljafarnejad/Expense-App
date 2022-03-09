@@ -5,13 +5,13 @@ import NavBar from "./Components/NavBar/NavBar";
 const App = () => {
   return (
     <section className="app">
-      <nav>
+      <nav className="nav">
         <NavBar />
       </nav>
-      <main>
+      <main className="main">
         <ExpenseApp />
       </main>
-      <aside></aside>
+      <aside className="aside"></aside>
     </section>
   );
 };

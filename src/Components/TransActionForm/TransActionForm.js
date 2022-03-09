@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const ExpenseForm = ({ addTransAction }) => {
+const TransActionForm = ({ addTransAction, setIsShow }) => {
   const [formValue, setFormValue] = useState({
     type: "expense",
-    amount: 0,
+    amount: "",
     description: "",
   });
 
@@ -17,16 +17,18 @@ const ExpenseForm = ({ addTransAction }) => {
       addTransAction(formValue);
       setFormValue({
         type: "expense",
-        amount: 0,
+        amount: "",
         description: "",
       });
     }
+    setIsShow(false);
   };
 
   return (
     <section>
       <form onSubmit={submitHandler}>
         <input
+          autocomplete="off"
           onChange={changeHandler}
           type="text"
           placeholder="description..."
@@ -34,6 +36,7 @@ const ExpenseForm = ({ addTransAction }) => {
           value={formValue.description}
         />
         <input
+          autocomplete="off"
           onChange={changeHandler}
           type="number"
           placeholder="amount..."
@@ -66,4 +69,4 @@ const ExpenseForm = ({ addTransAction }) => {
   );
 };
 
-export default ExpenseForm;
+export default TransActionForm;
