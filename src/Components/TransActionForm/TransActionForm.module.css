@@ -1,0 +1,96 @@
+.container {
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.container h2 {
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+:is(input[type="text"], input[type="number"]) {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-dark);
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+:is(input[type="text"], input[type="number"]):focus {
+  border: 2px solid var(--pink);
+}
+
+.number {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.number span {
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.radio input {
+  display: none;
+}
+
+.radio label {
+  position: relative;
+  cursor: pointer;
+}
+
+.radio label::before {
+  position: absolute;
+  top: 50%;
+  left: -23px;
+  transform: translateY(-50%);
+  content: "";
+  width: 18px;
+  height: 18px;
+  box-shadow: 0 0 0 2px var(--color-dark);
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.checked::before {
+  box-shadow: 0 0 0 2px var(--pink) !important;
+  background-color: var(--pink);
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.save {
+  background-color: var(--pink) !important;
+  margin-left: 1rem;
+}
+
+.cancel {
+  color: var(--color-dark) !important;
+  background-color: white !important;
+  margin-left: 1rem;
+  border: 1px solid var(--color-dark) !important;
+}

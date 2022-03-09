@@ -21,7 +21,7 @@ const Transactions = ({ transActions, addTransAction }) => {
       </div>
       {transActions.map((item) => {
         return (
-          <div>
+          <div key={item.id}>
             <p>{item.description}</p>
           </div>
         );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import style from "./TransActionForm.module.css";
 const TransActionForm = ({ addTransAction, setIsShow }) => {
   const [formValue, setFormValue] = useState({
     type: "expense",
@@ -13,20 +13,33 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (formValue.description !== "") {
-      addTransAction(formValue);
+    if (e.nativeEvent.submitter.value === "cancel") {
       setFormValue({
         type: "expense",
         amount: "",
         description: "",
       });
+      setIsShow(false);
+
+      return;
     }
+    if (formValue.description === "") {
+      alert("enter all value");
+      return;
+    }
+    addTransAction(formValue);
+    setFormValue({
+      type: "expense",
+      amount: "",
+      description: "",
+    });
     setIsShow(false);
   };
 
   return (
-    <section>
-      <form onSubmit={submitHandler}>
+    <section className={style.container}>
+      <h2>add new TransAction</h2>
+      <form onSubmit={submitHandler} className={style.form}>
         <input
           autocomplete="off"
           onChange={changeHandler}
@@ -35,15 +48,18 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
           name="description"
           value={formValue.description}
         />
-        <input
-          autocomplete="off"
-          onChange={changeHandler}
-          type="number"
-          placeholder="amount..."
-          name="amount"
-          value={formValue.amount}
-        />
-        <div>
+        <div className={style.number}>
+          <input
+            autocomplete="off"
+            onChange={changeHandler}
+            type="number"
+            placeholder="amount..."
+            name="amount"
+            value={formValue.amount}
+          />
+          <span>$</span>
+        </div>
+        <div className={style.radio}>
           <input
             type="radio"
             name="type"
@@ -52,7 +68,12 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
             checked={formValue.type === "expense"}
             onChange={changeHandler}
           />
-          <label htmlFor="expense">Expense</label>
+          <label
+            htmlFor="expense"
+            className={`${formValue.type === "expense" && style.checked}`}
+          >
+            Expense
+          </label>
           <input
             type="radio"
             name="type"
@@ -61,9 +82,21 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
             checked={formValue.type === "income"}
             onChange={changeHandler}
           />
-          <label htmlFor="income">Income</label>
+          <label
+            htmlFor="income"
+            className={`${formValue.type === "income" && style.checked}`}
+          >
+            Income
+          </label>
         </div>
-        <button type="submit">add</button>
+        <div className={style.btn}>
+          <button className={style.cancel} type="submit" value="cancel">
+            cancel
+          </button>
+          <button className={style.save} type="submit" value="save">
+            save
+          </button>
+        </div>
       </form>
     </section>
   );
