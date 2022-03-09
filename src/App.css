@@ -1,10 +1,24 @@
 .app {
   background-color: #fff;
-  width: 700px;
-  margin: 10rem auto;
+  width: 100%;
+  height: 100vh;
   padding: 2rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+nav {
+  height: 100%;
+  width: auto;
+  border: 1px solid black;
+}
+main {
+  height: 100%;
+  width: 70%;
+  border: 1px solid black;
+}
+aside {
+  height: 100%;
+  width: 20%;
+  border: 1px solid black;
 }

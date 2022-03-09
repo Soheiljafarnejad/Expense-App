@@ -8,6 +8,15 @@
   list-style: none;
 }
 
+:root {
+  --body-color: #f6f6f6;
+  --color-dark: #080807;
+  --color: #bcccd2;
+  --color: #443d3a;
+  --color: #c3bdff;
+  --color: #8c7875;
+}
+
 html {
   font-size: 62.5%;
 }

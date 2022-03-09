@@ -1,15 +1,17 @@
 import ExpenseApp from "./Components/ExpenseApp";
 import "./App.css";
+import NavBar from "./Components/NavBar/NavBar";
 
 const App = () => {
   return (
     <section className="app">
-      <header>
-        <h1>Expense</h1>
-      </header>
+      <nav>
+        <NavBar />
+      </nav>
       <main>
         <ExpenseApp />
       </main>
+      <aside></aside>
     </section>
   );
 };
