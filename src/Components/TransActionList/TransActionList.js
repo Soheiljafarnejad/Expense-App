@@ -3,7 +3,7 @@ import TransActionForm from "../TransActionForm/TransActionForm";
 import Modal from "../../common/Modal/Modal";
 import style from "./TransActionList.module.css";
 import TransAction from "../TransAction/TransAction";
-const TransactionList = ({ transActions, addTransAction }) => {
+const TransactionList = ({ transActions, addTransAction, deleteHandler }) => {
   const [isShow, setIsShow] = useState(false);
 
   return (
@@ -29,6 +29,7 @@ const TransactionList = ({ transActions, addTransAction }) => {
               amount={item.amount}
               type={item.type}
               date={item.date}
+              onDelete={() => deleteHandler(item.id)}
             />
           );
         })}

@@ -2,7 +2,7 @@ import style from "./TransAction.module.css";
 import { BiTrashAlt } from "react-icons/bi";
 import { CgArrowTopRight } from "react-icons/cg";
 import { CgArrowBottomLeft } from "react-icons/cg";
-const TransAction = ({ description, amount, type, date }) => {
+const TransAction = ({ description, amount, type, date, onDelete }) => {
   const _date = new Date(date).toLocaleString("en", {
     dateStyle: "medium",
   });
@@ -24,7 +24,7 @@ const TransAction = ({ description, amount, type, date }) => {
       <h4 className={style.amount}>$ {amount}</h4>
       <div>
         <button className={style.trash}>
-          <BiTrashAlt />
+          <BiTrashAlt onClick={onDelete} />
         </button>
       </div>
     </div>

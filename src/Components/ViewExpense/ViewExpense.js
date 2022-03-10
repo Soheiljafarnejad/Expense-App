@@ -9,7 +9,7 @@ import ReactTooltip from "react-tooltip";
 
 import Card from "../../common/Card/Card";
 
-const ViewExpense = ({ income, expense }) => {
+const ViewExpense = ({ income, expense}) => {
   let inc = Math.round((income / (income + expense)) * 100);
   let exp = Math.round((expense / (income + expense)) * 100);
   return (
