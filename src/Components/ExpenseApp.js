@@ -1,4 +1,4 @@
-import Transactions from "./Transactions/Transactions";
+import TransactionList from "./TransActionList/TransActionList";
 import ViewExpense from "./ViewExpense/ViewExpense";
 import { useEffect, useState } from "react";
 
@@ -8,7 +8,10 @@ const ExpenseApp = () => {
   const [transActions, setTransActions] = useState([]);
 
   const addTransAction = (value) => {
-    setTransActions([...transActions, { ...value, id: Date.now() }]);
+    setTransActions([
+      ...transActions,
+      { ...value, id: Date.now(), date: Date().toLocaleString() },
+    ]);
   };
 
   useEffect(() => {
@@ -26,7 +29,7 @@ const ExpenseApp = () => {
   return (
     <>
       <ViewExpense income={income} expense={expense} />
-      <Transactions
+      <TransactionList
         transActions={transActions}
         addTransAction={addTransAction}
       />

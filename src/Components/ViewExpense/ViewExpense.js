@@ -2,7 +2,7 @@ import style from "./ViewExpense.module.css";
 import { FiSettings } from "react-icons/fi";
 import { HiOutlineChartPie } from "react-icons/hi";
 import { RiSendPlaneLine } from "react-icons/ri";
-import { RiDeleteBinLine } from "react-icons/ri";
+import { BiTrashAlt } from "react-icons/bi";
 import { CgArrowTopRight } from "react-icons/cg";
 import { CgArrowBottomLeft } from "react-icons/cg";
 import ReactTooltip from "react-tooltip";
@@ -31,16 +31,16 @@ const ViewExpense = ({ income, expense }) => {
           <div className={style.description}>
             <div className={style.value}>
               <span>Card balance</span>
-              <h3 data-tip={`${income - expense} $`}>${income - expense}</h3>
+              <h3 data-tip={`$ ${income - expense}`}>${income - expense}</h3>
             </div>
             <div className={style.amount}>
               <div className={style.value}>
                 <span>expenses</span>
-                <h3 data-tip={`${expense} $`}>${expense}</h3>
+                <h3 data-tip={`$ ${expense}`}>${expense}</h3>
               </div>
               <div className={style.value}>
                 <span>income</span>
-                <h3 data-tip={`${income} $`}>${income}</h3>
+                <h3 data-tip={`$ ${income}`}>${income}</h3>
               </div>
             </div>
             <div className={style.cartIcons}>
@@ -51,7 +51,7 @@ const ViewExpense = ({ income, expense }) => {
                 <RiSendPlaneLine />
               </button>
               <button>
-                <RiDeleteBinLine />
+                <BiTrashAlt />
               </button>
             </div>
           </div>
@@ -63,7 +63,7 @@ const ViewExpense = ({ income, expense }) => {
             <button>
               <CgArrowTopRight />
             </button>
-            <h2 data-tip={`${income} $`}>{income} $</h2>
+            <h2 data-tip={`$ ${income}`}>$ {income}</h2>
           </div>
           <div>
             <h2>{inc || 0}%</h2>
@@ -75,7 +75,7 @@ const ViewExpense = ({ income, expense }) => {
             <button>
               <CgArrowBottomLeft />
             </button>
-            <h2 data-tip={`${expense} $`}>{expense} $</h2>
+            <h2 data-tip={`$ ${expense}`}>$ {expense}</h2>
           </div>
           <div>
             <h2>{exp || 0}%</h2>

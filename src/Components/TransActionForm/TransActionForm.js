@@ -1,7 +1,6 @@
 import { useState } from "react";
 import style from "./TransActionForm.module.css";
-import toast, { Toaster } from 'react-hot-toast';
-
+import toast, { Toaster } from "react-hot-toast";
 
 const TransActionForm = ({ addTransAction, setIsShow }) => {
   const [formValue, setFormValue] = useState({
@@ -27,7 +26,7 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
       return;
     }
     if (!formValue.description || !formValue.amount) {
-      toast.error('Please fill in all fields');
+      toast.error("Please fill all fields");
       return;
     }
     addTransAction(formValue);

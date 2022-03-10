@@ -1,10 +1,11 @@
-.TransActions {
+.title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-.TransActions button {
+.title button {
   color: white;
   background-color: var(--color-dark);
   padding: 0.5rem 2rem;
