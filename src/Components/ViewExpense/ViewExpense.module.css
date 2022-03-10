@@ -3,7 +3,7 @@
   background-color: var(--color-dark);
   color: white;
   border-radius: 20px;
-  padding: 2rem 4rem;
+  padding: 2rem 1.5rem;
 }
 
 .headerCart {
@@ -36,33 +36,73 @@
 /* Cart body */
 
 .bodyCart {
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 2rem 0;
 }
 
 .cart {
-  margin-right: 1rem;
+  flex-grow: 1;
+  max-width: 340px;
 }
 
 .description {
-  margin: auto;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  justify-content: space-between;
+  display: none;
+  overflow: hidden;
 }
+.description h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  width: 25vw;
+}
+
+@media screen and (min-width: 576px) {
+  .bodyCart {
+    justify-content: space-between;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 45%;
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 2rem 3rem;
+  }
+  .description {
+    width: 50%;
+    margin: 0 2.5rem;
+  }
+}
+
 .amount {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 2rem;
+  overflow: hidden;
+}
+
+.amount > * {
+  margin-right: 3rem;
 }
 
 .amount h3 {
+  width: 12vw;
   font-size: 2.3rem;
+  white-space: normal;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 .value span {
@@ -79,24 +119,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0.75rem;
   color: var(--gray);
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid var(--gray);
   border-radius: 10px;
 }
 .cartIcons button:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 /* box */
 .box__Container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin: 2rem 0;
 }
 .box {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,9 +146,26 @@
   padding: 1rem 2rem;
   border-radius: 20px;
   flex-grow: 1;
+  margin: 0.5rem 0;
 }
 
-.box button {
+.arrowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.arrowIcon h2 {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  width: 40vw;
+  margin-right: 0.5rem;
+}
+
+.arrowIcon button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,10 +177,6 @@
   border: none;
   outline: none;
   cursor: default;
-}
-
-.income{
-  margin-right: 2rem;
 }
 
 .income button {
@@ -138,4 +193,23 @@
 }
 .expense h2 {
   color: var(--orange);
+}
+
+@media screen and (min-width: 576px) {
+  .box__Container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .income {
+    margin-right: 2rem;
+  }
+  .arrowIcon h2 {
+    display: none;
+  }
+}
+
+.tooltip {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem !important;
+  padding: 0.5rem 1rem !important;
 }

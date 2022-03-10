@@ -2,7 +2,7 @@
 .card {
   font-family:monospace;
   cursor: pointer;
-  width: 310px;
+  width: 100%;
   height: 180px;
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
@@ -12,7 +12,7 @@
 .card__part {
   position: absolute;
   display: inline-block;
-  width: 310px;
+  width: 100%;
   height: 180px;
   background: linear-gradient(
     to right bottom,
@@ -39,19 +39,19 @@
 }
 
 .card__front {
-  padding: 18px;
+  padding: 1.5rem;
   -webkit-transform: rotateY(0);
   -moz-transform: rotateY(0);
 }
 
 .card__back {
-  padding: 18px 0;
+  padding:1.5rem 0;
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
 }
 
 .card__black_line {
-  margin-top: 5px;
+  margin-top: 0.5rem;
   height: 38px;
   background-color: #303030;
 }
@@ -74,12 +74,12 @@
   display: block;
   width: 100%;
   word-spacing: 4px;
-  font-size: 20px;
+  font-size: 1.7rem;
   letter-spacing: 2px;
   color: #fff;
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .card__space75 {
@@ -93,7 +93,7 @@
 }
 
 .card__label {
-  font-size: 10px;
+  font-size: 1rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 1px;
@@ -101,26 +101,26 @@
 
 .card__info {
   margin-bottom: 0;
-  margin-top: 5px;
-  font-size: 16px;
-  line-height: 18px;
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .card__back_content {
-  padding: 15px 15px 0;
+  padding: 0.5rem 1.5rem 0;
 }
 .card__secret_last {
   color: #303030;
   text-align: right;
   margin: 0;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .card__secret {
-  padding: 5px 12px;
+  padding: 0.5rem 1.2rem;
   background-color: #fff;
   position: relative;
 }

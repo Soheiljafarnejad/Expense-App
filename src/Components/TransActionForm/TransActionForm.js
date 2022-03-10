@@ -1,5 +1,8 @@
 import { useState } from "react";
 import style from "./TransActionForm.module.css";
+import toast, { Toaster } from 'react-hot-toast';
+
+
 const TransActionForm = ({ addTransAction, setIsShow }) => {
   const [formValue, setFormValue] = useState({
     type: "expense",
@@ -23,8 +26,8 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
 
       return;
     }
-    if (formValue.description === "") {
-      alert("enter all value");
+    if (!formValue.description || !formValue.amount) {
+      toast.error('Please fill in all fields');
       return;
     }
     addTransAction(formValue);
@@ -41,7 +44,7 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
       <h2>add new TransAction</h2>
       <form onSubmit={submitHandler} className={style.form}>
         <input
-          autocomplete="off"
+          autoComplete="off"
           onChange={changeHandler}
           type="text"
           placeholder="description..."
@@ -50,7 +53,6 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
         />
         <div className={style.number}>
           <input
-            autocomplete="off"
             onChange={changeHandler}
             type="number"
             placeholder="amount..."
@@ -89,6 +91,7 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
             Income
           </label>
         </div>
+        <Toaster />
         <div className={style.btn}>
           <button className={style.cancel} type="submit" value="cancel">
             cancel

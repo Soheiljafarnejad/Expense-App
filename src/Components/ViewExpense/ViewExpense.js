@@ -5,11 +5,13 @@ import { RiSendPlaneLine } from "react-icons/ri";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { CgArrowTopRight } from "react-icons/cg";
 import { CgArrowBottomLeft } from "react-icons/cg";
+import ReactTooltip from "react-tooltip";
+
 import Card from "../../common/Card/Card";
 
 const ViewExpense = ({ income, expense }) => {
-  let inc = Math.ceil((income / (income + expense)) * 100);
-  let exp = 100 - inc;
+  let inc = Math.round((income / (income + expense)) * 100);
+  let exp = Math.round((expense / (income + expense)) * 100);
   return (
     <section>
       <section className={style.container}>
@@ -28,17 +30,17 @@ const ViewExpense = ({ income, expense }) => {
           </div>
           <div className={style.description}>
             <div className={style.value}>
-              <span>Balance</span>
-              <h3>${income - expense}</h3>
+              <span>Card balance</span>
+              <h3 data-tip={`${income - expense} $`}>${income - expense}</h3>
             </div>
             <div className={style.amount}>
               <div className={style.value}>
-                <span>Expense</span>
-                <h3>${expense}</h3>
+                <span>expenses</span>
+                <h3 data-tip={`${expense} $`}>${expense}</h3>
               </div>
               <div className={style.value}>
-                <span>Income</span>
-                <h3>${income}</h3>
+                <span>income</span>
+                <h3 data-tip={`${income} $`}>${income}</h3>
               </div>
             </div>
             <div className={style.cartIcons}>
@@ -57,24 +59,31 @@ const ViewExpense = ({ income, expense }) => {
       </section>
       <section className={style.box__Container}>
         <div className={`${style.income} ${style.box}`}>
-          <button>
-            <CgArrowTopRight />
-          </button>
+          <div className={`${style.arrowIcon}`}>
+            <button>
+              <CgArrowTopRight />
+            </button>
+            <h2 data-tip={`${income} $`}>{income} $</h2>
+          </div>
           <div>
             <h2>{inc || 0}%</h2>
             <span>Income</span>
           </div>
         </div>
         <div className={`${style.expense} ${style.box}`}>
-          <button>
-            <CgArrowBottomLeft />
-          </button>
+          <div className={`${style.arrowIcon}`}>
+            <button>
+              <CgArrowBottomLeft />
+            </button>
+            <h2 data-tip={`${expense} $`}>{expense} $</h2>
+          </div>
           <div>
             <h2>{exp || 0}%</h2>
             <span>Expense</span>
           </div>
         </div>
       </section>
+      <ReactTooltip className={style.tooltip} />
     </section>
   );
 };

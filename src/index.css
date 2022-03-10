@@ -11,7 +11,7 @@
 :root {
   --body-color: #f6f6f6;
   --color-dark: #080807;
-  --gray: #e2e8f0;
+  --gray: #6b7280;
   --green: #42e874;
   --orange: #ff9c0b;
   --pink: #ec4879;
@@ -27,7 +27,7 @@ html {
 body {
   font-family: "Noto Sans", sans-serif;
   background-color: var(--body-color);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
