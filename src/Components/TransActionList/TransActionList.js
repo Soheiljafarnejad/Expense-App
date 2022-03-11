@@ -7,10 +7,10 @@ const TransactionList = ({ transActions, addTransAction, deleteHandler }) => {
   const [isShow, setIsShow] = useState(false);
 
   return (
-    <section>
+    <section className={style.container}>
       <div className={style.title}>
         <h2>Transactions:</h2>
-        <button onClick={() => setIsShow(!isShow)}>add</button>
+        <button onClick={() => setIsShow(true)}>add</button>
         {isShow && (
           <Modal>
             <TransActionForm

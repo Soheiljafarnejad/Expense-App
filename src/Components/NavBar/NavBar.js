@@ -18,7 +18,7 @@ const NavBar = () => {
         >
           <img className={style.profile} src={img} alt="profile-github" />
         </a>
-        <h1 className={`${style.title}`}>Expense</h1>
+        <h1 className={`${style.title}`}>Expense App</h1>
       </div>
       <div className={style.main}>
         <div className={`${style.icons} ${style.select}`}>

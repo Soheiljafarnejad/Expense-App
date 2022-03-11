@@ -3,102 +3,100 @@
   background-color: var(--color-dark);
   color: white;
   border-radius: 20px;
-  padding: 2rem 1.5rem;
+  padding: 2rem;
 }
 
 .headerCart {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
 .cartBtn {
-  display: flex;
+ display: flex;
 }
 
 .cartBtn button {
   color: var(--color-dark);
   background-color: white;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 10px;
   border: none;
   outline: none;
 }
 
 .settings {
-  padding: 1rem !important;
+  padding: 0 1rem !important;
   margin: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@media screen and (min-width: 576px) {
+  .container {
+    padding: 2rem 3rem;
+  }
+  
+.cartBtn button {
+  padding: 1rem 2rem;
+}
+}
+
 /* Cart body */
 
 .bodyCart {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0;
 }
 
 .cart {
-  flex-grow: 1;
-  max-width: 340px;
+  display: none;
 }
 
 .description {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
   overflow: hidden;
 }
+
 .description h3 {
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  width: 30vw;
+  max-width: 250px;
+  min-width: 120px;
+  white-space: normal;
   overflow-x: hidden;
-  width: 25vw;
-}
-
-@media screen and (min-width: 576px) {
-  .bodyCart {
-    justify-content: space-between;
-  }
-  .description {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 45%;
-    margin-left: 2rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    padding: 2rem;
-  }
-  .description {
-    width: 50%;
-    margin: 0 2.5rem;
-  }
+  text-overflow: ellipsis;
 }
 
 .amount {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-top: 2rem;
   overflow: hidden;
+  margin-top: 1.5rem;
 }
 
 .amount > * {
-  margin-right: 3rem;
+  flex-grow: 1;
+}
+
+.amount :first-child {
+  margin-right: 2rem;
 }
 
 .amount h3 {
-  width: 12vw;
+  width: 18vw;
+  max-width: 250px;
+  min-width: 120px;
   font-size: 2.3rem;
   white-space: normal;
   overflow-x: hidden;
@@ -108,6 +106,22 @@
 .value span {
   color: var(--gray);
   font-size: 1.7rem;
+}
+
+@media screen and (min-width: 768px) {
+  .bodyCart {
+    justify-content: space-between;
+  }
+  .cart {
+    display: block;
+    width: 50%;
+    min-width: 300px;
+    max-width: 360px;
+  }
+  .description {
+    flex-wrap: 1;
+    margin-left: 3rem;
+  }
 }
 
 .cartIcons {
@@ -135,7 +149,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 2rem 0;
+  margin-top: 1rem;
 }
 .box {
   width: 100%;
@@ -143,10 +157,11 @@
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 1rem 1rem;
   border-radius: 20px;
   flex-grow: 1;
-  margin: 0.5rem 0;
+  margin-top: 1rem;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 7%);
 }
 
 .arrowIcon {
@@ -154,15 +169,6 @@
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-}
-
-.arrowIcon h2 {
-  display: block;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow-x: hidden;
-  width: 40vw;
-  margin-right: 0.5rem;
 }
 
 .arrowIcon button {
@@ -203,13 +209,4 @@
   .income {
     margin-right: 2rem;
   }
-  .arrowIcon h2 {
-    display: none;
-  }
-}
-
-.tooltip {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.8rem !important;
-  padding: 0.5rem 1rem !important;
 }

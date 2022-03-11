@@ -63,7 +63,6 @@ const ViewExpense = ({ income, expense}) => {
             <button>
               <CgArrowTopRight />
             </button>
-            <h2 data-tip={`$ ${income}`}>$ {income}</h2>
           </div>
           <div>
             <h2>{inc || 0}%</h2>
@@ -75,7 +74,6 @@ const ViewExpense = ({ income, expense}) => {
             <button>
               <CgArrowBottomLeft />
             </button>
-            <h2 data-tip={`$ ${expense}`}>$ {expense}</h2>
           </div>
           <div>
             <h2>{exp || 0}%</h2>
@@ -83,7 +81,7 @@ const ViewExpense = ({ income, expense}) => {
           </div>
         </div>
       </section>
-      <ReactTooltip className={style.tooltip} />
+      <ReactTooltip className="tooltip" />
     </section>
   );
 };

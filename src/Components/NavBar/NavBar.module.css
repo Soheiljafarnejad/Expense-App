@@ -1,4 +1,5 @@
 .navBar {
+  position: fixed;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -7,7 +8,7 @@
 }
 
 .header {
-  padding: 0 2rem;
+  margin-left: 1rem;
 }
 
 .profile {
@@ -28,7 +29,7 @@
   align-items: center;
   justify-content: flex-start;
   margin-top: 2rem;
-  padding: 1rem 2.5rem;
+  padding: 1.3rem 2.5rem;
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -52,4 +53,5 @@
 
 .footer {
   margin-top: auto;
+  margin-bottom: 2rem;
 }

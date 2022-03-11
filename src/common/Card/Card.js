@@ -14,12 +14,12 @@ const Card = () => {
         <img
           className={`${style.card__front_logo} ${style.card__logo}`}
           src={logo}
-          alt="visa"
+          alt="logo"
         />
         <p className={style.card_number}>**** **** **** 6258</p>
         <div className={style.card__space75}>
           <span className={style.card__label}>Card holder</span>
-          <p className={style.card__info}>John Doe</p>
+          <p className={`${style.card__info} ${style.card__name}`}>your name</p>
         </div>
         <div className={style.card__space25}>
           <span className={style.card__label}>Expires</span>
@@ -33,15 +33,15 @@ const Card = () => {
           <div className={style.card__secret}>
             <p className={style.card__secret_last}>425</p>
           </div>
-          <img
+          {/* <img
             className={`${style.card__back_square} ${style.card__square}`}
             src={chip}
             alt="chip"
-          />
+          /> */}
           <img
             className={`${style.card__back_logo} ${style.card__logo}`}
             src={logo}
-            alt="visa"
+            alt="logo"
           />
         </div>
       </div>

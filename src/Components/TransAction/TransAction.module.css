@@ -6,13 +6,16 @@
   border-radius: 15px;
   padding: 1rem;
   margin-bottom: 1rem;
+  box-shadow: 0px 5px 5px rgb(0 0 0 / 7%);
+
 }
 
 .title {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow: hidden;
+  flex-grow: 1;
 }
 
 .title button {
@@ -30,18 +33,27 @@
 }
 
 .title h4 {
+  width: 30vw;
+  max-width: 250px;
+  min-width: 100px;
+  white-space: normal;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 40vw;
 }
 
 .amount {
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 20vw;
+  flex-grow: 2;
   margin-left: 0.5rem;
+  overflow: hidden;
+}
+
+.amount h4 {
+  width: 30vw;
+  max-width: 250px;
+  min-width: 100px;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
 }
 
 .title span {
@@ -66,7 +78,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1rem;
+  margin: 0 0.5rem;
   background-color: rgba(255, 255, 255, 0);
   color: var(--dark);
   font-size: 2rem;

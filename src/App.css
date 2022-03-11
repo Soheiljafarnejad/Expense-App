@@ -25,10 +25,17 @@
   .nav {
     display: block;
     height: 100%;
-    margin-right: 2rem;
+    width: 230px;
   }
   .container {
     width: 98%;
     height: 100%;
   }
 }
+
+.tooltip {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.8rem !important;
+  padding: 0.5rem 1rem !important;
+}
+

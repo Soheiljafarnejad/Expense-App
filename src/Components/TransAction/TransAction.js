@@ -2,6 +2,8 @@ import style from "./TransAction.module.css";
 import { BiTrashAlt } from "react-icons/bi";
 import { CgArrowTopRight } from "react-icons/cg";
 import { CgArrowBottomLeft } from "react-icons/cg";
+import ReactTooltip from "react-tooltip";
+
 const TransAction = ({ description, amount, type, date, onDelete }) => {
   const _date = new Date(date).toLocaleString("en", {
     dateStyle: "medium",
@@ -21,7 +23,10 @@ const TransAction = ({ description, amount, type, date, onDelete }) => {
           <span>{_date}</span>
         </div>
       </div>
-      <h4 className={style.amount}>$ {amount}</h4>
+      <div className={style.amount}>
+        <h4 data-tip={`$ ${parseFloat(amount)}`}>${parseFloat(amount)}</h4>
+        <ReactTooltip className="tooltip" />
+      </div>
       <div>
         <button className={style.trash}>
           <BiTrashAlt onClick={onDelete} />
