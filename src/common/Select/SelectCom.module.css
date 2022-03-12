@@ -1,0 +1,28 @@
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.selected {
+  flex-grow: 1;
+}
+
+.select span {
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .select {
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  .selected {
+    flex-grow: 0;
+    min-width: 350px;
+  }
+}

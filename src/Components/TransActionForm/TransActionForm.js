@@ -50,7 +50,7 @@ const TransActionForm = ({ addTransAction, setIsShow }) => {
 
   return (
     <section className={style.container}>
-      <h2>new TransAction</h2>
+      <h2>new Transaction</h2>
       <form onSubmit={submitHandler} className={style.form}>
         <input
           ref={des}

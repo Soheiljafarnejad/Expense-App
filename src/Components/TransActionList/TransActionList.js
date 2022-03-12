@@ -3,7 +3,7 @@ import TransActionForm from "../TransActionForm/TransActionForm";
 import Modal from "../../common/Modal/Modal";
 import style from "./TransActionList.module.css";
 import TransAction from "../TransAction/TransAction";
-const TransactionList = ({ transActions, addTransAction, deleteHandler }) => {
+const TransactionList = ({ transActionList, addTransAction, deleteHandler }) => {
   const [isShow, setIsShow] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ const TransactionList = ({ transActions, addTransAction, deleteHandler }) => {
         )}
       </div>
       <div>
-        {transActions.map((item) => {
+        {transActionList.map((item) => {
           return (
             <TransAction
               key={item.id}

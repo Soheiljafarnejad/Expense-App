@@ -35,7 +35,7 @@ const NavBar = () => {
         </div>
         <div className={style.icons}>
           <BsWallet2 />
-          <h2>TransActions</h2>
+          <h2>Transactions</h2>
         </div>
         <div className={style.icons}>
           <HiOutlineChartPie />
